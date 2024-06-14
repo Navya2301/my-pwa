@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navya Sri Racha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="root"></div>
+    <nav class="navbar">
+        <div class="navbar__container"> <!--This is for the nav bar at the top-->
+            <!--This is to create that shape around the logo-->
+            <!--I will add that block later-->
+            <a href="/" id="navbar__logo">N</a> 
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <!-- Items that are there on the header -->
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">&nbspAbout</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> &nbspExperience</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> &nbspcontact</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/" class="navbar__button"> &nbspResume</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!--intro container-->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Hi, my name is</h1>
+                <h2>Navya Racha.</h2>
+                <h3>I am a Data Engineer</h3>
+                <p>Thanks for stopping by. I'm currently a Computer Science Master's student and I will be graduating this spring semeseter i.e. May 2024. Also
+                    I'm currently working as a Data Engineering intern at 
+                    <a href="/" id="body__currentcompany">RGA</a>.
+                </p>
+            </div>
+            <div class="main__img__container">
+                <img src="images/developer.svg" alt="pic" id="main__img">
+            </div>
+        </div>
+        <div class="about__container">
+            <ul class="page__menu">
+                <!-- About me-->
+                <li class="page__headings">
+                    <span id="about__container__heading">&nbsp&nbspAbout Me</span>
+                    <div class="about__content__container">
+                        <div class="about__content">
+                            <p>Hello! My name is Navya, I am a computer science master student currently working as a Data Engineering intern at <a href="/">RGA</a>. Despite my bachelor's degree, I have gained experience in different fields like business analyst, software engineer , and now in data engineering as well. In the midst of these things I developed quite a great interest towards web development as well.</p>
+                            <p>Talking about my experince I first worked as an intern at a <a href="/">startup</a> during my bachelor's and later soon after I graduated I joined one of the biggest <a href="/">MNC's</a> which gave me experience in the corporate field and also introduced me to the web technologies. It is then I developed interest towards it and also got an opportunity to work on a project. Currently I'm focused on building integration between applications to handle data efficiently and fulfilling the responsibilities of a data engineer at <a href="/">RGA</a>.</p>  
+                            <p>Here are few technologies I have been working on recently:
+                                <ul id="about__courses__list">
+                                    <li>DBT</li>
+                                    <li>Snowflake</li>
+                                    <li>JS</li>
+                                    <LI>SQL</LI>  
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="about__photo">
+                            <div class="wrapper"> 
+                                <div class="image">
+                                    <div style="max-width: 500px; display: block;"    class="element">
+                                        <img src="/images/mypic.jpg" alt="pic" id="about__image">
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Where I have worked -->
+                <li class="page__headings">
+                    <span id="about__container__heading">&nbsp&nbspWhere I have worked</span>
+                    <div class="work__container">
+                        <div class="companies__list">
+                            <button class="company__btn active" data-target="#RGA__description" onclick="showDiv()">
+                                RGA
+                            </button>
+                            <button class="company__btn" data-target="#TCS__description">
+                                TCS
+                            </button>
+                            <button class="company__btn" data-target="#Stumagz__description">
+                                Stumagz
+                            </button>
+                        </div>
+                        <div class="company__description">
+                            <div class="description active" id="RGA__description">
+                                <h2>Data Engineer Intern
+                                    <span>&nbsp@&nbsp
+                                        <a href="/">RGA</a>
+                                    </span>
+                                </h2>
+                                <p class="range">
+                                    June 2023 - April 2024
+                                </p>
+                                <div class="responsibilities">
+                                    <ul>
+                                        <li>
+                                            Under direct supervision, assists with the routine
+                                            aspects of designing, developing, testing, implementing,
+                                            documenting, and supporting big data/ data lake systems, 
+                                            including big data cataloging, modeling, ingestion, streaming, 
+                                            processing, and storage technologies and processes. 
+                                        
+                                        </li>
+                                        <li>Also Developed a testing module to familiarize the new 
+                                            product teams to understand the automated enterprise data 
+                                            strategy effectively.</li>
+                                        <li>
+                                            Designed, implemented and automated the process of 
+                                            dataset replication between production and testing 
+                                            environments,implemented integration between applications.
+                                        </li>
+                                        <li>
+                                            During the starting tenure, worked as a business analyst to
+                                            and understood the business aspects and needs of the
+                                            company. Worked on a major project Agile project in shifting an old oracle build tool to the new web UI (Modernisation) project. 
+                                            Pulled the code from the old forms and created mockups 
+                                            for the development team. Also tested the user 
+                                            stories to test the functionality(Regression and 
+                                            Functional Testing)
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="description" id="TCS__description">
+                                <h2>Associate System Engineer
+                                    <span>&nbsp@&nbsp
+                                        <a href="/">TCS</a>
+                                    </span>
+                                </h2>
+                                <p class="range">
+                                    July 2019 - July 2022
+                                </p>
+                                <div class="responsibilities">
+                                    <ul>
+                                        <li>Worked for the Ericsson client. Designed, tested and prototyped Network Manager software and systems for current
+                                            and future Ericsson product programs.</li>
+                                        <li>Continuous delivery of the main requirement requested by the customer on a sprintly basis by rigorous functional
+                                            testing, and fixing the bugs. And resolving the real time issues on the product environment following agile
+                                            methodology.</li>
+                                        <li>Assisted on various software projects, which introduced challenges requiring creative solutions to affect rigorous
+                                            quality and cost-down targets.</li>
+                                        <li>Collaborated with cross-functional partners, external vendors and suppliers to complete the live 5G testing and we
+                                            reached an accomplishment in the project as we became the world's first cloud native ENM in live network. Having
+                                            successfully completed lab testing, we have launched the 5G network sites.</li>
+                                        <li> Received “Star of the Quarter” by delivering the software with 50% more efficiency and quick JIRA handling.</li>  
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="description" id="Stumagz__description">
+                                <h2>Content Writing Intern
+                                    <span>&nbsp@&nbsp
+                                        <a href="/">Stumagz</a>
+                                    </span>
+                                </h2>
+                                <p class="range">
+                                    May 2018 - Dec 2018
+                                </p>
+                                <div class="responsibilities">
+                                    <ul>
+                                        <li>Worked under the content writing team to write articles
+                                            in the company website on relevant topics and categorise them
+                                            under different levels.
+                                        </li>
+                                        <li>Later lead a group of content writer team called Avengers which is
+                                             responsible for publishing the articles of the main page of 
+                                             the organization on a weekly basis on current buzzing topics
+                                        </li>
+                                        <li>Responsible for designing and releasing the magazine 
+                                            and cover letter for the student chapter. 
+                                            And assisted people in technical and creative writing.</li>
+                                    </ul>
+
+                                </div>
+                                
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="page__headings" id="contact-element">
+                    <span id="about__container__heading__next">What's Next</span>
+                    <div class="contact__container">
+                        <h2>Get In Touch</h2>
+                        <p>I'm currently looking for any new opportunities that
+                            help me grow and my inbox is always open. 
+                            Whether you have a question or just want to say 
+                            hi, Be it anything 
+                            I'll try my best to get back to you!
+                            Thank You!
+                        </p>
+                        <div class="button_sec">
+                            <button>
+                                <a href="">Say Hello!</a>
+                            </button>
+                        </div>
+                    
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <a href="">
+                <div>
+                    Built by Navya Sri Racha
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- About container-->
+
+
+    <!-- Services section -->
+    <div class="services"></div>
+    <!-- The below script is to use jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!--<script>
+        function App(){
+            //const time = new Date().toLocaleTimeString();
+            const [time,setTime] = React.useState(new Date().toLocaleTimeString());
+            React.useEffect(function(){
+                setInterval(function(){
+                    setTime(new Date().toLocaleTimeString());
+
+                },1000);
+            });
+
+
+
+            return React.createElement('header', null, `Hello React! it's ${time}`);  
+        }
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>-->
+
+
+    <!--
+    <div class="body__content">
+        <p id="body__content">
+            <span id="body__greet">Hi, my name is</span>
+            <br><br>
+            <span id="body__name">Navya Racha.</span>
+            <br><br>
+            <span id="body__occupation">I am a Data Engineer</span>
+            <br><br>
+            <p id="body__intro"> Thanks for stopping by. I'm currently a Computer Science Master's student and I will be graduating this spring semeseter i.e. May 2024. Also
+            I'm currently working as a Data Engineering intern at <a href="/" id="body__currentcompany">RGA</a>.
+            </p>
+        </p>
+    </div> -->
+</body>
+</html>
+
+<!--
+<div class="about__StyledPic-sc-1ownso9-2 lbrXps">
+    <div class="wrapper">
+        <div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained img">
+            <div style="max-width: 500px; display: block;">
+                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='500' width='500' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+            </div>
+            <div aria-hidden="true" data-placeholder-image="" style="opacity: 0; transition: opacity 500ms linear 0s; background-color: rgb(232, 232, 232); position: absolute; inset: 0px; object-fit: cover;">
+            </div>
+            <picture>
+                <source type="image/avif" srcset="/static/30a645f7db6038f83287d0c6042d3b2b/aebc8/me.avif 125w,
+    /static/30a645f7db6038f83287d0c6042d3b2b/6b255/me.avif 250w,
+    /static/30a645f7db6038f83287d0c6042d3b2b/f9526/me.avif 500w" sizes="(min-width: 500px) 500px, 100vw">
+    <source type="image/webp" srcset="/static/30a645f7db6038f83287d0c6042d3b2b/4155f/me.webp 125w,
+    /static/30a645f7db6038f83287d0c6042d3b2b/02deb/me.webp 250w,
+    /static/30a645f7db6038f83287d0c6042d3b2b/1ee78/me.webp 500w" sizes="(min-width: 500px) 500px, 100vw">
+    <img width="500" height="500" data-main-image="" sizes="(min-width: 500px) 500px, 100vw" decoding="async" src="/static/30a645f7db6038f83287d0c6042d3b2b/25f3c/me.jpg" srcset="/static/30a645f7db6038f83287d0c6042d3b2b/2dd75/me.jpg 125w,
+    /static/30a645f7db6038f83287d0c6042d3b2b/754ad/me.jpg 250w,
+    /static/30a645f7db6038f83287d0c6042d3b2b/25f3c/me.jpg 500w" alt="Headshot" style="object-fit: cover;opacity: 1;">
+</picture>
+<noscript>
+
+</noscript>
+</div>
+</div>
+</div>
+-->

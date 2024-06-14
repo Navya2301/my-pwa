@@ -1,0 +1,682 @@
+* {
+    background-color:#20150f;
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0 15px;
+}
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+.navbar {
+    background-color: #20150f;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-weight: bold;
+    position: sticky; /* This is what it makes the header appear every time */
+    z-index: 999;
+
+}
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+    
+}
+#navbar__logo {
+    color: #20150f;
+    /*background-image: linear-gradient(to bottom, #f0e7e2 0%, #20150f 100%);*/
+    font-size: 3.5rem;
+    height: 55px;
+    /*-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*This is for firefox*/
+    /*-moz-background-clip: text;
+    -moz-text-fill-color:transparent; */
+    display: static;
+    align-items: center;  
+    cursor: pointer;
+    text-shadow: 
+    -1px 0 #64ffda,  
+    0 1px #64ffda,
+    1px 0 #64ffda,
+    0 -1px #64ffda; 
+    text-decoration: none;/* Outline effect */
+
+}
+#navbar__logo:hover{
+    transition: all 0.5s ease;
+    color: #64ffda;
+    
+}
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    counter-reset: item-counter;
+    
+}
+
+.navbar__menu a{
+    counter-increment: item-counter;
+}
+.navbar__menu a::before{
+    content: "0" counter(item-counter) ".";
+
+    /* used to increment the vallues */
+    color: #64ffda;
+} 
+.navbar__item {
+    height: 80px;  
+}
+.navbar__item li{
+    margin-block-start: 0.83em;
+}
+.navbar__links{
+    color: #f0e7e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    height: 100%;
+    text-decoration: none;
+    font-weight: 100;}
+.navbar__index{
+    color: #64ffda;
+    font-weight: 100;
+}
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    padding: 0rem 1rem;
+    background-color: transparent; 
+    width: 100%;
+}
+.navbar__button{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 42px;
+    margin: 0;
+    color :  #64ffda;;
+    border-radius: 13px;
+    border: 1.7px solid #64ffda;;
+ /* Initial shadow to create lifted effect */
+    transition: all 0.3s ease;
+}
+.navbar__button:hover {
+    box-shadow: 5px 5px #64ffda;;
+    transform: translate(-5px, -5px);
+}
+.navbar__links:hover {
+    transition: all .4s ease;
+    color:#64ffda ;
+}
+
+
+/* To handle the screen shrinking we use media*/
+/* This is for mobile and tablet responsive site*/
+
+@media screen and (max-width :960px) {
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+
+    }
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top:-1000px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+    /* The below is the JS that is going to trigger this*/
+    .navbar__menu.active {
+        background: #20150f;
+        top:100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.5rem;
+    }
+    #navbar__logo {
+        padding-left: 25px;
+    }
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background : #f0e7e2;
+
+    }
+    .navbar__items{
+        width: 100%;
+    }
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+    #mobile-menu{
+        position: absolute;
+        top:20%;
+        right: 5%;
+        transform: translate(5%,20%);
+
+
+    }
+    .navbar__btn {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+    }
+    .navbar__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        margin: 0;
+    }
+    .navbar__toggle .bar{ 
+        display: block;
+        cursor: pointer;
+
+    }
+    /*Below is the one to animate the .bar when we click it*/
+    /*nth child is to select the elements in line
+    child 2 - is line 2 in '3 bar'*/
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){   
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){   
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+}
+
+/* intro Section*/
+
+.main__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+    
+}
+.main{
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+
+}
+.main__content h1{
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 1rem;
+    color: #64ffda;
+    font-weight: 200;
+}
+.main__content h2{
+    
+    font-size: 5.2rem;
+    font-weight: 800;
+    background-color: #20150f;
+    background-image: linear-gradient(to top, #f0e7e2 0%, #412a1e 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*This is for firefox*/
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent; 
+    
+}
+.main__content h3{
+    font-size: 3.5rem;
+    font-weight: 800;
+    background-color: #20150f;
+    background-image: linear-gradient(to top, #f0e7e2 0%, #20150f 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*This is for firefox*/
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent; 
+    
+}
+.main__content p{
+    
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #f0e7e2;
+    font-weight: 200;
+}
+.main__content a{
+    color: #64ffda;
+    padding: 0;
+}
+.main__img__container{
+    text-align: center;
+
+}
+
+
+#main__img {
+    height: 70%;
+    width: 70%;
+}
+ /*mobile responsive*/
+@media screen and (max-width :768px) {
+    .main__container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+
+    }
+    .main__content{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .main__content h2{
+        font-size: 4rem;
+        margin-top: 1.5rem;
+    }
+    .main__content h3{
+        font-size: 2.5rem;
+
+    }
+    .main__content p{
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+ }
+ @media screen and (max-width :480px) {
+    .main__content h1{
+        font-size: 0.8rem;
+    }
+
+    .main__content h2{
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
+    .main__content h3{
+        font-size: 2rem;
+
+    }
+    .main__content p{
+        margin-top: 1rem;
+        font-size: 0.85rem;
+    }
+ }
+
+ /* About container */
+ .about__container {
+    padding: 0 60px;
+ }
+
+ .about__content__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*align-items: center;
+    justify-self: center;*/ 
+    margin: 0 auto;
+    height: 80vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+ }
+
+ /* photo gray effect*/
+
+
+ .about__photo {
+    display: flex;
+    justify-content:center;
+    align-items:first baseline;
+    /*filter: grayscale(100%) contrast(1);*/
+    /* border: 2px solid #64ffda;*/
+    padding: 0;
+    
+ }
+
+ .about__photo::before{
+    mix-blend-mode: screen;
+    position: absolute;
+    
+ }
+ .wrapper{
+    position: relative;
+    background-color: #64ffda;
+    display: block;
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    padding: 0;
+ }
+ 
+ .wrapper::before{
+    mix-blend-mode: screen;
+    background-color: #20150f;
+ }
+ .wrapper::after{
+    background-color: #20150f;
+ }
+ .wrapper::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+ }
+ .image{
+    position: relative;
+    border-radius: 4px;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1);
+    transition:all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    padding: 0;
+ }
+ .element {
+    position: static;
+    padding: 0;
+ }
+ .element img[alt=""] {
+    filter: blur(5px);
+}
+.element img{
+    height: 100%;
+}
+
+
+ /********/
+
+
+ .about__content{
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    color:#f0e7e2;
+ }
+ .page__headings {
+    list-style-type: none; /*to remove the "." before it*/
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f0e7e2;  
+    
+}
+#about__container__heading{
+    background-color: #20150f;
+    background-image: linear-gradient(to top, #f0e7e2 0%, #412a1e 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*This is for firefox*/
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent; 
+}
+
+#about__image{
+    height: 55%;
+    width: 55%;
+ }
+
+.about__content p{
+    margin-top: 10px;
+ }
+ #about__courses__list {
+    list-style-type:decimal-leading-zero;    
+    margin-left: 2rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .about__content a{
+    color: #64ffda;
+    text-decoration: none;   
+    padding: 0;
+ }
+.about__container {
+    counter-reset: item-counter;
+    
+}
+.about__container .page__headings{
+    counter-increment: item-counter;
+}
+.about__container .page__headings::before{
+    content: "0" counter(item-counter) ".";
+    /* used to increment the vallues */
+    color: #64ffda;
+    font-weight: 200;
+
+}
+/* Mobile responsives */
+@media screen and (max-width :768px) {
+    .about__content__container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+    .page__headings{
+        font-size: 1.7rem
+    }
+    .about__content {
+        font-size: 0.85rem;
+
+    }
+
+}
+@media screen and (max-width :468px){
+    .page__headings{
+        font-size: 1.4rem
+    }
+    .about__content {
+        font-size: 0.85rem;
+
+    }
+
+}
+
+/* Work container */
+.work__container{
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    margin-top: 30px;
+    height: 70vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+
+}
+.description {
+    display: none;
+}
+.description.active{
+    display: grid;
+}
+.companies__list{
+    position: relative;
+    display: grid;
+    
+    height: 20%;
+    /*width: 50%;
+    height: 20%;  */
+}
+
+.work__container button{ 
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    color: #f0e7e2;
+    background-color: transparent;
+    border: 0px;
+    
+}
+
+.work__container button:hover {
+    background-color: #412a1e;
+    transition: all 0.5s ease;
+    color: #64ffda;
+    background: #412a1e;
+}
+.responsibilities{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 1rem;
+    font-weight: 200;
+    max-width: 700px;
+    
+}
+.company__description h2 {
+    padding: 0;
+    font-size: 1.5rem;
+}
+.range{
+    display: contents;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+.description a{
+    color: #64ffda;
+    font-weight: 100;
+
+}
+
+
+/* Mobile responsives */
+@media screen and (max-width :768px) {
+    .work__container{
+        display: block;
+        margin:auto;
+        height: 90vh;
+        align-items: center;
+        justify-self: center;
+    }
+    .companies__list{
+        display:inline-flex;
+        height: auto;
+    }
+    .companies__list button{
+        line-height: 2.5;
+        padding: 0 60px;
+    }
+
+}
+@media screen and (max-width :468px){
+    .companies__list button{
+        line-height: 2.5;
+        padding: 0 30px;
+    }
+}
+
+
+/* contact container  */
+
+
+
+#about__container__heading__next{
+    color: #64ffda;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 1rem;   
+    font-weight: 100;
+
+}
+#contact-element {
+    max-width: 700px;
+    margin: 0 auto 100px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+.contact__container h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 3rem;
+    color: #f0e7e2;
+    
+}
+.contact__container p{
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 200;
+    
+}
+.contact__container button{
+    margin-top: 30px;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: flex;
+    border-radius: 13px;
+    border: 1.7px solid #64ffda;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.contact__container button:hover{
+    box-shadow: 5px 5px #64ffda;;
+    transform: translate(-5px, -5px);
+}
+.button_sec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact__container a{
+    color:#64ffda;
+    text-decoration: none;
+}
+.footer a{
+    text-decoration: none;
+    color: #f0e7e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 20px;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 0.6rem;
+
+}
+.footer a:hover{
+    color:#64ffda;
+    transition: all 0.2sec ease;
+}
+
